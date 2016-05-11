@@ -6,8 +6,8 @@ defmodule KV.Registry do
 
   # client side
   @doc "start the registry"
-  def start_link do
-    GenServer.start_link(__MODULE__, :ok, [])
+  def start_link(name) do
+    GenServer.start_link(__MODULE__, :ok, name: name)
   end
 
   @doc "Look up the bucket pid for 'name' stored in 'server.'"
